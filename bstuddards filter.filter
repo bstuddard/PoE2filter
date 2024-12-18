@@ -1,0 +1,200 @@
+#===============================================================================================================
+# Barrett's Loot Filter - for Path of Exile
+#===============================================================================================================
+# VERSION:  0.1.1
+# AUTHOR:   bstuddard
+#
+# This is a filter designed for early PoE2 EA gameplay, based on the popular neversink filter. This filter focuses more on highlighting loot, rather than hiding.
+#
+
+#--------------------------
+# Overrides - Uniques, Valuables
+#--------------------------
+
+Show
+Rarity Unique
+PlayAlertSound 3 300
+PlayEffect Brown
+MinimapIcon 2 Brown Star
+SetFontSize 40
+
+## Divine Orb Style
+Show
+Class "Currency"
+BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
+SetFontSize 45
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+
+#--------------------------
+# Gold Large Drops
+#--------------------------
+
+Show
+StackSize >= 500
+BaseType == "Gold"
+SetFontSize 40
+PlayEffect Yellow Temp
+
+Show
+BaseType == "Gold"
+SetFontSize 33
+
+
+#--------------------------
+# Uncut Gems
+#--------------------------
+
+Show
+BaseType "Uncut "
+SetFontSize 40
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+
+#--------------------------
+# Socketables and Special Character Equipment
+#--------------------------
+
+Show
+BaseType "Scroll of Wisdom"
+SetFontSize 30
+
+# Any Jewels
+Show
+Class "Jewel"
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
+
+# Any Runes and Charms
+Show 
+BaseType "Rune" "Charm"
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
+
+#--------------------------
+# Socketables and Special Character Equipment
+#--------------------------
+
+# All currency
+Show
+Class "Currency" "Waystone"
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
+
+# Fragments
+Show
+BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "Cowardly Fate" "Deadly Fate" "Victorious Fate" "Expedition Logbook" "Orb" "Prism"
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
+
+#--------------------------
+# Rings, Amulets, Belts
+#--------------------------
+
+Show
+Class "Rings" "Amulets"
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
+
+Show
+Rarity >= Rare
+Class "Belts"
+SetFontSize 40
+
+
+#--------------------------
+# Salvagable Items
+#--------------------------
+
+Show
+Sockets > 0
+SetBorderColor 20 240 240
+SetFontSize 35
+
+Show
+Quality >= 1
+SetBorderColor 20 240 240
+SetFontSize 35
+
+#--------------------------
+# OPTIONAL SOFT HIDE RULES
+#--------------------------
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 90
+DropLevel <= 80
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 80
+DropLevel <= 70
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 70
+DropLevel <= 60
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 60
+DropLevel <= 50
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 50
+DropLevel <= 40
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 40
+DropLevel <= 30
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 30
+DropLevel <= 20
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 20
+DropLevel <= 15
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 15
+DropLevel <= 10
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 10
+DropLevel <= 15
+SetFontSize 20
+
+Show
+Rarity Normal
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 5
+DropLevel <= 2
+SetFontSize 20
+
