@@ -1,11 +1,24 @@
 #===============================================================================================================
-# Barrett's Loot Filter - for Path of Exile
+# bstuddards's Loot Filter - for Path of Exile
 #===============================================================================================================
 # VERSION:  0.1.1
 # AUTHOR:   bstuddard
 #
 # This is a filter designed for early PoE2 EA gameplay, based on the popular neversink filter. This filter focuses more on highlighting loot, rather than hiding.
 #
+
+
+#--------------------------
+# High level global hides
+#--------------------------
+
+Hide
+BaseType "Scroll of Wisdom"
+
+Hide
+StackSize < 50
+BaseType == "Gold"
+AreaLevel >= 65
 
 #--------------------------
 # Overrides - Uniques, Valuables
@@ -20,12 +33,26 @@ SetFontSize 40
 
 ## Divine Orb Style
 Show
-Class "Currency"
-BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
+BaseType "Mirror" "Divine" "Perfect Jeweller's Orb" "Greater Jeweller's Orb" "Diamond" "Time-Lost Diamond" "Breach Ring" "Gold Key" "Soul Core" "Greater Jeweller's Orb" "Orb of Chance" "Exotic Coinage" "Orb of Annulment" "Distilled Isolation" "Distilled Suffering" "Distilled Despair" "Distilled Fear" "Adaptive Catalyst" "Greater Essence of Haste" "Greater Essence of Sorcery" "Greater Essence of the Infinite" "Greater Essence of Electricity" "Greater Essence of Enhancement" "Greater Essence of Ruin" "Greater Essence of the Mind" "Greater Essence of Torment" "Greater Essence of Battle" "Greater Essence of Flames" "Greater Essence of Ice" "Greater Essence of the Body"
 SetFontSize 45
 PlayAlertSound 6 300
 PlayEffect Red
 MinimapIcon 0 Red Star
+
+Show
+BaseType "An Audience with the King" "Breachstone" "Simulacrum"
+SetFontSize 45
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+
+Show
+Class == "Quest Items"
+SetFontSize 45
+SetTextColor 74 230 58 255
+PlayAlertSound 3 300
+PlayEffect Green
+MinimapIcon 0 Green Pentagon
 
 #--------------------------
 # Gold Large Drops
@@ -38,16 +65,35 @@ SetFontSize 40
 PlayEffect Yellow Temp
 
 Show
+StackSize >= 50
 BaseType == "Gold"
 SetFontSize 33
 
 
 #--------------------------
-# Uncut Gems
+# Uncut Gems and Medium Quality Currency
 #--------------------------
 
 Show
-BaseType "Uncut "
+Class == "Skill Gems" "Support Gems"
+SetFontSize 40
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+
+Show
+BaseType == "Uncut Spirit Gem" "Uncut Skill Gem" "Uncut Support Gem"
+SetFontSize 40
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+
+Show
+BaseType "Bronze Key" "Silver Key" "Gemcutter's Prism" "Chaos Orb" "Armourer's Scrap" "Artificer's Orb" "Chance Shard" "Glassblower's Bauble" "Lesser Jeweller's Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb" "Arcanist's Etcher" "Blacksmith's Whetstone" "Black Scythe Artifact" "Broken Circle Artifact" "Order Artifact" "Sun Artifact" "Distilled Disgust" "Distilled Envy" "Distilled Greed" "Distilled Paranoia" "Distilled Guilt" "Distilled Ire"
+SetFontSize 40
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+
+Show
+BaseType "Uncut " "Distilled " " Key" "Catalyst" "Essence" "Splinter" "Key"
 SetFontSize 40
 PlayEffect Cyan
 MinimapIcon 1 Cyan Triangle
@@ -57,8 +103,11 @@ MinimapIcon 1 Cyan Triangle
 #--------------------------
 
 Show
-BaseType "Scroll of Wisdom"
-SetFontSize 30
+Corrupted False
+Quality >= 21
+Rarity Normal Magic Rare
+SetFontSize 40
+MinimapIcon 2 Cyan Triangle
 
 # Any Jewels
 Show
@@ -76,21 +125,35 @@ MinimapIcon 2 Cyan Triangle
 # Socketables and Special Character Equipment
 #--------------------------
 
+# Low Level Currency
+Show
+Class == "Stackable Currency"
+BaseType == "Orb of Augmentation" "Orb of Transmutation"
+
 # All currency
 Show
-Class "Currency" "Waystone"
+Class "Currency" "Waystone" "Omen" "Logbook"
 SetFontSize 40
 MinimapIcon 2 Cyan Triangle
 
 # Fragments
 Show
-BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "Cowardly Fate" "Deadly Fate" "Victorious Fate" "Expedition Logbook" "Orb" "Prism"
+BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "Cowardly Fate" "Deadly Fate" "Victorious Fate" "Expedition Logbook" "Orb" "Prism" "Fate"
 SetFontSize 40
 MinimapIcon 2 Cyan Triangle
 
 #--------------------------
 # Rings, Amulets, Belts
 #--------------------------
+
+Show
+Mirrored False
+Corrupted False
+Rarity Normal
+BaseType "Heavy Belt" "Sapphire Ring" "Stellar Amulet"
+SetFontSize 40
+PlayEffect Cyan
+MinimapIcon 2 Cyan Triangle
 
 Show
 Class "Rings" "Amulets"
@@ -100,6 +163,10 @@ MinimapIcon 2 Cyan Triangle
 Show
 Rarity >= Rare
 Class "Belts"
+SetFontSize 40
+
+Show
+AnyEnchantment True
 SetFontSize 40
 
 
@@ -115,76 +182,200 @@ Show
 Quality >= 1
 SetFontSize 40
 
+
 #--------------------------
-# OPTIONAL SOFT HIDE RULES
+# Special Bases
 #--------------------------
 
 Show
-Rarity Normal
+Mirrored False
+Corrupted False
+ItemLevel >= 82
+Rarity >= Normal
+SetFontSize 40
+
+Show
+Mirrored False
+Corrupted False
+ItemLevel >= 82
+Rarity Normal Magic Rare Unique
+Class "Flasks" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands" "Charms"
+SetFontSize 40
+
+Show
+Rarity Rare
+AreaLevel <= 64
+SetFontSize 40
+
+Show
+Width 1
+Height 1
+SetFontSize 40
+
+#--------------------------
+# FLASKS
+#--------------------------
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+AreaLevel <= 8
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Medium"
+AreaLevel <= 12
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Greater"
+AreaLevel <= 15
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Grand"
+AreaLevel <= 22
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Giant"
+AreaLevel <= 29
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Colossal"
+AreaLevel <= 39
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Gargantuan"
+AreaLevel <= 49
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Transcendent"
+AreaLevel <= 59
+
+Show
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Ultimate"
+AreaLevel <= 65
+
+#--------------------------
+# OPTIONAL HIDE RULES
+#--------------------------
+
+Hide
+Width >= 2
+Height >= 3
+Rarity Normal Magic Rare
+AreaLevel > 65
+ItemLevel < 81
+
+Hide
+Width >= 2
+Height >= 3
+Rarity Normal Magic
+AreaLevel > 65
+ItemLevel < 82
+
+Hide
+Quality 0
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Lesser" "Medium"
+AreaLevel >= 15
+
+Hide
+Quality 0
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Grand" "Greater"
+AreaLevel >= 30
+
+Hide
+Quality 0
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Colossal" "Giant"
+
+Hide
+Quality 0
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Gargantuan"
+AreaLevel >= 52
+
+Hide
+Quality 0
+Class == "Life Flasks" "Mana Flasks"
+BaseType "Transcendent"
+AreaLevel >= 62
+
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 90
 DropLevel <= 80
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 80
 DropLevel <= 70
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 70
 DropLevel <= 60
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 60
 DropLevel <= 50
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 50
 DropLevel <= 40
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 40
 DropLevel <= 30
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 30
 DropLevel <= 20
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 20
 DropLevel <= 15
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 15
 DropLevel <= 10
 SetFontSize 20
 
-Show
-Rarity Normal
+Hide
+Rarity Normal Magic
 Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
 AreaLevel >= 5
 DropLevel <= 2
 SetFontSize 20
+
+Hide
+BaseType "Scroll of Wisdom"
