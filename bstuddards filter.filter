@@ -299,14 +299,14 @@ Hide
 Width >= 2
 Height >= 3
 Rarity Normal Magic Rare
-AreaLevel > 65
+AreaLevel >= 65
 ItemLevel < 81
 
 Hide
 Width >= 2
 Height >= 3
 Rarity Normal Magic
-AreaLevel > 65
+AreaLevel >= 65
 ItemLevel < 82
 
 Hide
@@ -337,6 +337,11 @@ Quality 0
 Class == "Life Flasks" "Mana Flasks"
 BaseType "Transcendent"
 AreaLevel >= 62
+
+Hide
+Rarity Normal
+AreaLevel >= 65
+ItemLevel < 81
 
 Hide
 Rarity Normal Magic
