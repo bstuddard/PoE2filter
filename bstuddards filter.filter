@@ -13,11 +13,17 @@
 #--------------------------
 
 Hide
+AreaLevel >= 30
 BaseType "Scroll of Wisdom"
 
 Hide
 StackSize < 50
 BaseType == "Gold"
+AreaLevel >= 65
+
+Hide
+Class == "Stackable Currency"
+BaseType == "Orb of Augmentation" "Orb of Transmutation"
 AreaLevel >= 65
 
 #--------------------------
@@ -129,6 +135,7 @@ MinimapIcon 2 Cyan Triangle
 Show
 Class == "Stackable Currency"
 BaseType == "Orb of Augmentation" "Orb of Transmutation"
+AreaLevel < 65
 
 # All currency
 Show
@@ -176,10 +183,34 @@ SetFontSize 40
 
 Show
 Sockets > 0
+Width <= 2
+Height <= 2
 SetFontSize 40
 
 Show
 Quality >= 1
+Width <= 2
+Height <= 2
+SetFontSize 40
+
+Show
+Sockets > 0
+Width <= 1
+Height <= 3
+SetFontSize 40
+
+Show
+Quality >= 1
+Width <= 1
+Height <= 3
+SetFontSize 40
+
+Show
+Sockets > 1
+SetFontSize 40
+
+Show
+Quality >= 5
 SetFontSize 40
 
 
@@ -376,6 +407,3 @@ Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quive
 AreaLevel >= 5
 DropLevel <= 2
 SetFontSize 20
-
-Hide
-BaseType "Scroll of Wisdom"
