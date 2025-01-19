@@ -327,20 +327,20 @@ AreaLevel <= 65
 # ItemLevel < 82
 
 # Uncomment for ev pure (e.g. archer)
-# Hide
-# Rarity Normal Magic
-# BaseEnergyShield > 0
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+BaseEnergyShield > 0
+ItemLevel < 82
 
 # Hide
-# Rarity Normal Magic
-# BaseArmour > 0
-# ItemLevel < 82
+Rarity Normal Magic
+BaseArmour > 0
+ItemLevel < 82
 
 # Hide
-# Rarity Normal Magic
-# Class "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Crossbows" "Wands" "Sceptres"
-# ItemLevel < 82
+Rarity Normal Magic
+Class "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Crossbows" "Wands" "Sceptres"
+ItemLevel < 82
 
 # Uncomment for arm pure (e.g. warrior)
 # Hide

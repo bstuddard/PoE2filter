@@ -311,20 +311,20 @@ AreaLevel <= 65
 #--------------------------
 
 # Uncomment for es pure (e.g. mages)
-# Hide
-# Rarity Normal Magic
-# BaseEvasion > 0
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+BaseEvasion > 0
+ItemLevel < 82
 
 # Hide
-# Rarity Normal Magic
-# BaseArmour > 0
-# ItemLevel < 82
+Rarity Normal Magic
+BaseArmour > 0
+ItemLevel < 82
 
 # Hide
-# Rarity Normal Magic
-# Class "Shields" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
-# ItemLevel < 82
+Rarity Normal Magic
+Class "Shields" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+ItemLevel < 82
 
 # Uncomment for ev pure (e.g. archer)
 # Hide

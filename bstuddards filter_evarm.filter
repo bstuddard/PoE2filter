@@ -370,15 +370,15 @@ AreaLevel <= 65
 # ItemLevel < 82
 
 # Uncomment for ev/arm (e.g. merc)
-# Hide
-# Rarity Normal Magic
-# BaseEnergyShield > 0
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+BaseEnergyShield > 0
+ItemLevel < 82
 
 # Hide
-# Rarity Normal Magic
-# Class "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Wands" "Sceptres"
-# ItemLevel < 82
+Rarity Normal Magic
+Class "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Wands" "Sceptres"
+ItemLevel < 82
 
 Hide
 Quality 0
