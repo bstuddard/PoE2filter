@@ -80,6 +80,13 @@ MinimapIcon 0 Green Pentagon
 #--------------------------
 
 Show
+StackSize >= 5000
+BaseType == "Gold"
+SetFontSize 40
+PlayEffect Yellow
+MinimapIcon 1 Yellow Cross
+
+Show
 StackSize >= 500
 BaseType == "Gold"
 SetFontSize 40
@@ -364,7 +371,7 @@ Rarity Normal Magic
 BaseArmour > 0
 ItemLevel < 82
 
-# Hide
+Hide
 Rarity Normal Magic
 Class "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Bows" "Crossbows" "Wands" "Sceptres"
 ItemLevel < 82
