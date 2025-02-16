@@ -41,6 +41,18 @@ Class == "Stackable Currency"
 BaseType == "Orb of Augmentation" "Orb of Transmutation"
 AreaLevel >= 65
 
+Hide
+BaseType "Rune" "Charm"
+
+Hide
+BaseType == "Uncut Skill Gem"
+ItemLevel < 19
+
+Hide
+Rarity Normal Magic Rare
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+ItemLevel < 82
+
 #--------------------------
 # Overrides - Uniques, Valuables
 #--------------------------
@@ -111,8 +123,6 @@ MinimapIcon 1 Cyan Triangle
 Show
 BaseType == "Uncut Spirit Gem" "Uncut Skill Gem" "Uncut Support Gem"
 SetFontSize 40
-PlayEffect Cyan
-MinimapIcon 1 Cyan Triangle
 
 Show
 BaseType "Bronze Key" "Silver Key" "Gemcutter's Prism" "Chaos Orb" "Armourer's Scrap" "Artificer's Orb" "Chance Shard" "Glassblower's Bauble" "Lesser Jeweller's Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb" "Arcanist's Etcher" "Blacksmith's Whetstone" "Black Scythe Artifact" "Broken Circle Artifact" "Order Artifact" "Sun Artifact" "Distilled Disgust" "Distilled Envy" "Distilled Greed" "Distilled Paranoia" "Distilled Guilt" "Distilled Ire"
@@ -141,7 +151,6 @@ MinimapIcon 2 Cyan Triangle
 Show
 Class "Jewel"
 SetFontSize 40
-MinimapIcon 2 Cyan Triangle
 
 # Any Runes and Charms
 Show 
@@ -324,20 +333,20 @@ AreaLevel <= 65
 #--------------------------
 
 # Uncomment for es pure (e.g. mages)
-# Hide
-# Rarity Normal Magic
-# BaseEvasion > 0
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+BaseEvasion > 0
+ItemLevel < 82
 
-# Hide
-# Rarity Normal Magic
-# BaseArmour > 0
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+BaseArmour > 0
+ItemLevel < 82
 
-# Hide
-# Rarity Normal Magic
-# Class "Shields" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
-# ItemLevel < 82
+Hide
+Rarity Normal Magic
+Class "Shields" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+ItemLevel < 82
 
 # Uncomment for ev pure (e.g. archer)
 # Hide
@@ -356,20 +365,20 @@ AreaLevel <= 65
 # ItemLevel < 82
 
 # Uncomment for arm pure (e.g. warrior)
-Hide
-Rarity Normal Magic
-BaseEnergyShield > 0
-ItemLevel < 82
+# Hide
+# Rarity Normal Magic
+# BaseEnergyShield > 0
+# ItemLevel < 82
 
-Hide
-Rarity Normal Magic
-BaseEvasion > 0
-ItemLevel < 82
+# Hide
+# Rarity Normal Magic
+# BaseEvasion > 0
+# ItemLevel < 82
 
-Hide
-Rarity Normal Magic
-Class "Foci" "Quivers" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
-ItemLevel < 82
+# Hide
+# Rarity Normal Magic
+# Class "Foci" "Quivers" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+# ItemLevel < 82
 
 # Uncomment for ev/es (e.g. monk)
 # Hide

@@ -146,8 +146,14 @@ MinimapIcon 2 Cyan Triangle
 # Any Runes and Charms
 Show 
 BaseType "Rune" "Charm"
+AreaLevel <= 65
 SetFontSize 40
 MinimapIcon 2 Cyan Triangle
+
+Show 
+BaseType "Rune" "Charm"
+AreaLevel > 65
+SetFontSize 32
 
 #--------------------------
 # Socketables and Special Character Equipment
